@@ -1,6 +1,10 @@
 import { useState } from "react";
 import "./Country.css";
-export default function Country({ country, handleVisitedCountry }) {
+export default function Country({
+  country,
+  handleVisitedCountry,
+  handleVisitedFlag,
+}) {
   const { name, flags, population, area, cca3 } = country;
   const [visited, setVisited] = useState(false);
   const handleVisited = () => {
@@ -21,6 +25,10 @@ export default function Country({ country, handleVisitedCountry }) {
       <br />
       <button onClick={() => handleVisitedCountry(country)}>
         Mark visited
+      </button>
+      <br />
+      <button onClick={() => handleVisitedFlag(country)}>
+        Mark visited flag
       </button>
     </div>
   );
