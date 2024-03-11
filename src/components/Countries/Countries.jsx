@@ -17,14 +17,21 @@ export default function Countries() {
 
   const handleVisitedCountry = (country) => {
     console.log("Add this to your visited country");
-    console.log(country);
+
+    // console.log(country);
+    const newVisitedCountries = [...visitedCountries, country];
+    setVisitedCountries(newVisitedCountries);
   };
   return (
     <div>
       <h3>Countries : {countries.length}</h3>
       <div>
-        <h5>Visited Countries</h5>
-        <ul></ul>
+        <h5>Visited Countries : {visitedCountries.length}</h5>
+        <ul>
+          {visitedCountries.map((visitedCountry) => (
+            <li key={visitedCountry.cca3}>{visitedCountry.name.common}</li>
+          ))}
+        </ul>
       </div>
       <div className="country-container">
         {countries.map((country) => (

@@ -6,7 +6,7 @@ export default function Country({ country, handleVisitedCountry }) {
   const handleVisited = () => {
     setVisited(!visited);
   };
-  console.log(handleVisitedCountry);
+
   return (
     <div className={`country ${visited ? "visited" : "non-visited"}`}>
       <h3 style={{ color: visited ? "green" : "red" }}>{name?.common}</h3>
@@ -19,7 +19,9 @@ export default function Country({ country, handleVisitedCountry }) {
       {visited && <p>I have visited this country</p>}
       <button onClick={handleVisited}>Visited</button>
       <br />
-      <button>Mark visited</button>
+      <button onClick={() => handleVisitedCountry(country)}>
+        Mark visited
+      </button>
     </div>
   );
 }
