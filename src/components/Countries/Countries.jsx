@@ -28,6 +28,11 @@ export default function Countries() {
     const newVisitedFlags = [...visitedFlags, flag];
     setVisitedFlags(newVisitedFlags);
   };
+
+  // remove the item from an array in a state
+  // use filter to select all the element expcet the one you want to remove.
+  // updating object in an state
+
   return (
     <div>
       <h3>Countries : {countries.length}</h3>
